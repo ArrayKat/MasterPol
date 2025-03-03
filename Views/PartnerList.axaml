@@ -1,0 +1,58 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="MasterPolDesktop.PartnerList"
+			 xmlns:vm ="using:MasterPolDesktop.ViewModels"
+			 x:DataType="vm:PartnerListVM">
+
+	<Grid Background="#FFFFFF">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="7*"/>
+		</Grid.RowDefinitions>
+		<StackPanel Grid.Row="0">
+			<TextBlock Text="Master Pol"/>
+			<Button Command="{Binding AddP}" Content="Добавить партнера"/>
+		</StackPanel>
+		<ListBox Grid.Row="1" ItemsSource="{Binding Partners}" SelectedItem="{Binding ChangePartner}">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<Border BorderBrush="#F4E8D3" BorderThickness="2">
+						<Grid Margin="10">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="2*"/>
+								<ColumnDefinition Width="*"/>
+							</Grid.ColumnDefinitions>
+							<StackPanel Grid.Column="0">
+								<TextBlock FontSize="18" FontWeight="Bold">
+									<TextBlock.Text>
+										<MultiBinding StringFormat=" {0} | {1} ">
+											<Binding Path="IdTypeCompanyNavigation.TypeName"/>
+											<Binding Path="NameCompany"/>
+										</MultiBinding>
+									</TextBlock.Text>
+								</TextBlock>
+								<TextBlock Text="{Binding DirectorFullName}"/>
+								<TextBlock Text="{Binding ContactPhone}"/>
+								
+							</StackPanel>
+							<StackPanel Grid.Column="1">
+								<TextBlock >
+									<TextBlock.Text>
+										<MultiBinding StringFormat="Скидка: {0} %">
+											<Binding Path="Sale" />
+										</MultiBinding>
+									</TextBlock.Text>
+								</TextBlock>
+							</StackPanel>
+
+						</Grid>
+					</Border>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+
+		</ListBox>
+	</Grid>
+</UserControl>

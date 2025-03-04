@@ -13,13 +13,16 @@
 			<RowDefinition Height="7*"/>
 		</Grid.RowDefinitions>
 		<StackPanel Grid.Row="0">
-			<TextBlock Text="Master Pol"/>
-			<Button Command="{Binding AddP}" Content="Добавить партнера"/>
+			<StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+				<Image Width="30" Height="30" Source="/Assets/icon.png"  Margin="10 5"/>
+				<TextBlock Text="Master Pol" FontWeight="Bold" FontSize="24" Foreground="#67BA80"/>
+			</StackPanel>
+			<Button Command="{Binding AddP}" Content="Добавить партнера" Margin="50 10"/>
 		</StackPanel>
-		<ListBox Grid.Row="1" ItemsSource="{Binding Partners}" SelectedItem="{Binding ChangePartner}">
+		<ListBox Grid.Row="1" ItemsSource="{Binding Partners}" SelectedItem="{Binding ChangePartner}" Margin="50 0">
 			<ListBox.ItemTemplate>
 				<DataTemplate>
-					<Border BorderBrush="#F4E8D3" BorderThickness="2">
+					<Border BorderBrush="#67BA80" BorderThickness="2">
 						<Grid Margin="10">
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="2*"/>
@@ -46,6 +49,7 @@
 										</MultiBinding>
 									</TextBlock.Text>
 								</TextBlock>
+								<Button Content="История" Command="{Binding $parent[UserControl].((vm:PartnerListVM)DataContext).History}" CommandParameter="{Binding IdPartner}"/>
 							</StackPanel>
 
 						</Grid>

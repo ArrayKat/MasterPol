@@ -125,28 +125,13 @@ public partial class _43pKolinichenkoUpContext : DbContext
             entity.Property(e => e.ArticleNumber)
                 .HasColumnType("character varying")
                 .HasColumnName("article_number");
-            entity.Property(e => e.Height)
-                .HasDefaultValueSql("0")
-                .HasColumnName("height");
             entity.Property(e => e.IdProductType).HasColumnName("id_product_type");
-            entity.Property(e => e.Length)
-                .HasDefaultValueSql("0")
-                .HasColumnName("length");
             entity.Property(e => e.MinimumPrice)
                 .HasDefaultValueSql("0")
                 .HasColumnName("minimum_price");
             entity.Property(e => e.ProductName)
                 .HasColumnType("character varying")
                 .HasColumnName("product_name");
-            entity.Property(e => e.WeightWithPack)
-                .HasDefaultValueSql("0")
-                .HasColumnName("weight_with_pack");
-            entity.Property(e => e.WeightWithoutPack)
-                .HasDefaultValueSql("0")
-                .HasColumnName("weight_without_pack");
-            entity.Property(e => e.Width)
-                .HasDefaultValueSql("0")
-                .HasColumnName("width");
 
             entity.HasOne(d => d.IdProductTypeNavigation).WithMany(p => p.Products)
                 .HasForeignKey(d => d.IdProductType)

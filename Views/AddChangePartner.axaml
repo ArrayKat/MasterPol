@@ -8,24 +8,28 @@
 			 x:DataType="vm:AddChangePartnerVM">
 
 	<StackPanel>
-		<Button Command="{Binding GoBack}" Content="Назад"/>
-		<TextBox Watermark="Наименование" Text="{Binding CurentPartner.NameCompany}"/>
-		<TextBlock Text="Тип организации:"/>
-		<ComboBox ItemsSource="{Binding Types}" SelectedItem="{Binding SelectedType}">
-			<ComboBox.ItemTemplate>
-				<DataTemplate>
-					<TextBlock Text="{Binding TypeName}"/>
-				</DataTemplate>
-			</ComboBox.ItemTemplate>
-		</ComboBox>
-		<TextBlock Text="Рейтинг:"/>
-		<NumericUpDown Minimum="0" Maximum="10" Value="{Binding CurentPartner.Rating}" FormatString="0"/>
-		<TextBox Watermark="Адрес" Text="{Binding CurentPartner.LegalAddress}"/>
-		<TextBox Watermark="ФИО директора" Text="{Binding CurentPartner.DirectorFullName}"/>
-		<TextBlock Text="Телефон:"/>
-		<MaskedTextBox Text="{Binding CurentPartner.ContactPhone}" Mask="000 000 00 00"/>
-		<TextBox Watermark="Почта" Text="{Binding CurentPartner.ContactEmail}"/>
-		<Button Command="{Binding SaveChange}" Content="Сохранить"/>
+		<Button Command="{Binding GoBack}" Content="Назад" Margin="5"/>
+		<TextBlock Text="{Binding NamePage}" FontWeight="Bold" FontSize="24" Foreground="#67BA80" HorizontalAlignment="Center"/>
+		<StackPanel Margin="100 0">
+			<TextBox Watermark="Наименование организации" Text="{Binding CurentPartner.NameCompany}"/>
+			<TextBlock Text="Тип организации:"/>
+			<ComboBox ItemsSource="{Binding Types}" SelectedItem="{Binding SelectedType}">
+				<ComboBox.ItemTemplate>
+					<DataTemplate>
+						<TextBlock Text="{Binding TypeName}"/>
+					</DataTemplate>
+				</ComboBox.ItemTemplate>
+			</ComboBox>
+			<TextBlock Text="Рейтинг:"/>
+			<NumericUpDown Minimum="0" Maximum="10" Value="{Binding CurentPartner.Rating}" FormatString="0"/>
+			<TextBox Watermark="Адрес организации" Text="{Binding CurentPartner.LegalAddress}"/>
+			<TextBox Watermark="ФИО директора" Text="{Binding CurentPartner.DirectorFullName}"/>
+			<TextBlock Text="Телефон:"/>
+			<MaskedTextBox Text="{Binding CurentPartner.ContactPhone}" Mask="000 000 00 00"/>
+			<TextBox Watermark="Почта" Text="{Binding CurentPartner.ContactEmail}"/>
+			<Button Command="{Binding SaveChange}" Content="Сохранить"/>
+		</StackPanel>
+
 	</StackPanel>
 	
 </UserControl>

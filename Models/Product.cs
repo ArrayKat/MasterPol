@@ -15,16 +15,6 @@ public partial class Product
 
     public decimal? MinimumPrice { get; set; }
 
-    public decimal? Length { get; set; }
-
-    public decimal? Width { get; set; }
-
-    public decimal? Height { get; set; }
-
-    public decimal? WeightWithoutPack { get; set; }
-
-    public decimal? WeightWithPack { get; set; }
-
     public virtual ProductType? IdProductTypeNavigation { get; set; }
 
     public virtual ICollection<PartnerProduct> PartnerProducts { get; set; } = new List<PartnerProduct>();

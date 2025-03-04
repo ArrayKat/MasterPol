@@ -3,28 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\Katya\\source\\repos\\MasterPolDesktop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DBC3DD84-5386-43BC-BA01-683570830F3D}|MasterPolDesktop.csproj|c:\\users\\katya\\source\\repos\\masterpoldesktop\\views\\addchangepartner.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DBC3DD84-5386-43BC-BA01-683570830F3D}|MasterPolDesktop.csproj|solutionrelative:views\\addchangepartner.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DBC3DD84-5386-43BC-BA01-683570830F3D}|MasterPolDesktop.csproj|c:\\users\\katya\\source\\repos\\masterpoldesktop\\viewmodels\\addchangepartnervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DBC3DD84-5386-43BC-BA01-683570830F3D}|MasterPolDesktop.csproj|solutionrelative:viewmodels\\addchangepartnervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DBC3DD84-5386-43BC-BA01-683570830F3D}|MasterPolDesktop.csproj|c:\\users\\katya\\source\\repos\\masterpoldesktop\\views\\addchangepartner.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
-      "RelativeMoniker": "D:0:0:{DBC3DD84-5386-43BC-BA01-683570830F3D}|MasterPolDesktop.csproj|solutionrelative:views\\addchangepartner.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
+      "AbsoluteMoniker": "D:0:0:{DBC3DD84-5386-43BC-BA01-683570830F3D}|MasterPolDesktop.csproj|c:\\users\\katya\\source\\repos\\masterpoldesktop\\viewmodels\\historypartnervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DBC3DD84-5386-43BC-BA01-683570830F3D}|MasterPolDesktop.csproj|solutionrelative:viewmodels\\historypartnervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DBC3DD84-5386-43BC-BA01-683570830F3D}|MasterPolDesktop.csproj|c:\\users\\katya\\source\\repos\\masterpoldesktop\\assets\\styles.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "RelativeMoniker": "D:0:0:{DBC3DD84-5386-43BC-BA01-683570830F3D}|MasterPolDesktop.csproj|solutionrelative:assets\\styles.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DBC3DD84-5386-43BC-BA01-683570830F3D}|MasterPolDesktop.csproj|c:\\users\\katya\\source\\repos\\masterpoldesktop\\views\\partnerlist.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
       "RelativeMoniker": "D:0:0:{DBC3DD84-5386-43BC-BA01-683570830F3D}|MasterPolDesktop.csproj|solutionrelative:views\\partnerlist.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DBC3DD84-5386-43BC-BA01-683570830F3D}|MasterPolDesktop.csproj|c:\\users\\katya\\source\\repos\\masterpoldesktop\\viewmodels\\partnerlistvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DBC3DD84-5386-43BC-BA01-683570830F3D}|MasterPolDesktop.csproj|solutionrelative:viewmodels\\partnerlistvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DBC3DD84-5386-43BC-BA01-683570830F3D}|MasterPolDesktop.csproj|c:\\users\\katya\\source\\repos\\masterpoldesktop\\views\\addchangepartner.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "RelativeMoniker": "D:0:0:{DBC3DD84-5386-43BC-BA01-683570830F3D}|MasterPolDesktop.csproj|solutionrelative:views\\addchangepartner.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DBC3DD84-5386-43BC-BA01-683570830F3D}|MasterPolDesktop.csproj|c:\\users\\katya\\source\\repos\\masterpoldesktop\\assets\\styles.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
-      "RelativeMoniker": "D:0:0:{DBC3DD84-5386-43BC-BA01-683570830F3D}|MasterPolDesktop.csproj|solutionrelative:assets\\styles.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
+      "AbsoluteMoniker": "D:0:0:{DBC3DD84-5386-43BC-BA01-683570830F3D}|MasterPolDesktop.csproj|c:\\users\\katya\\source\\repos\\masterpoldesktop\\views\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "RelativeMoniker": "D:0:0:{DBC3DD84-5386-43BC-BA01-683570830F3D}|MasterPolDesktop.csproj|solutionrelative:views\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DBC3DD84-5386-43BC-BA01-683570830F3D}|MasterPolDesktop.csproj|c:\\users\\katya\\source\\repos\\masterpoldesktop\\models\\partnerproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DBC3DD84-5386-43BC-BA01-683570830F3D}|MasterPolDesktop.csproj|solutionrelative:models\\partnerproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DBC3DD84-5386-43BC-BA01-683570830F3D}|MasterPolDesktop.csproj|c:\\users\\katya\\source\\repos\\masterpoldesktop\\viewmodels\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DBC3DD84-5386-43BC-BA01-683570830F3D}|MasterPolDesktop.csproj|solutionrelative:viewmodels\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,8 +42,72 @@
       "DocumentGroups": [
         {
           "DockedWidth": 217,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddChangePartnerVM.cs",
+              "DocumentMoniker": "C:\\Users\\Katya\\source\\repos\\MasterPolDesktop\\ViewModels\\AddChangePartnerVM.cs",
+              "RelativeDocumentMoniker": "ViewModels\\AddChangePartnerVM.cs",
+              "ToolTip": "C:\\Users\\Katya\\source\\repos\\MasterPolDesktop\\ViewModels\\AddChangePartnerVM.cs",
+              "RelativeToolTip": "ViewModels\\AddChangePartnerVM.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAIwE0AAAB4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T14:44:41.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PartnerProduct.cs",
+              "DocumentMoniker": "C:\\Users\\Katya\\source\\repos\\MasterPolDesktop\\Models\\PartnerProduct.cs",
+              "RelativeDocumentMoniker": "Models\\PartnerProduct.cs",
+              "ToolTip": "C:\\Users\\Katya\\source\\repos\\MasterPolDesktop\\Models\\PartnerProduct.cs",
+              "RelativeToolTip": "Models\\PartnerProduct.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAlwBMAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T14:49:16.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HistoryPartnerVM.cs",
+              "DocumentMoniker": "C:\\Users\\Katya\\source\\repos\\MasterPolDesktop\\ViewModels\\HistoryPartnerVM.cs",
+              "RelativeDocumentMoniker": "ViewModels\\HistoryPartnerVM.cs",
+              "ToolTip": "C:\\Users\\Katya\\source\\repos\\MasterPolDesktop\\ViewModels\\HistoryPartnerVM.cs",
+              "RelativeToolTip": "ViewModels\\HistoryPartnerVM.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAACaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T14:46:27.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainWindow.axaml",
+              "DocumentMoniker": "C:\\Users\\Katya\\source\\repos\\MasterPolDesktop\\Views\\MainWindow.axaml",
+              "RelativeDocumentMoniker": "Views\\MainWindow.axaml",
+              "ToolTip": "C:\\Users\\Katya\\source\\repos\\MasterPolDesktop\\Views\\MainWindow.axaml",
+              "RelativeToolTip": "Views\\MainWindow.axaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-04T14:42:18.709Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MainWindowViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Katya\\source\\repos\\MasterPolDesktop\\ViewModels\\MainWindowViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\MainWindowViewModel.cs",
+              "ToolTip": "C:\\Users\\Katya\\source\\repos\\MasterPolDesktop\\ViewModels\\MainWindowViewModel.cs",
+              "RelativeToolTip": "ViewModels\\MainWindowViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T14:14:38.876Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -59,26 +131,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "PartnerListVM.cs",
-              "DocumentMoniker": "C:\\Users\\Katya\\source\\repos\\MasterPolDesktop\\ViewModels\\PartnerListVM.cs",
-              "RelativeDocumentMoniker": "ViewModels\\PartnerListVM.cs",
-              "ToolTip": "C:\\Users\\Katya\\source\\repos\\MasterPolDesktop\\ViewModels\\PartnerListVM.cs",
-              "RelativeToolTip": "ViewModels\\PartnerListVM.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABoAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-03T19:12:47.241Z",
+              "Title": "AddChangePartner.axaml",
+              "DocumentMoniker": "C:\\Users\\Katya\\source\\repos\\MasterPolDesktop\\Views\\AddChangePartner.axaml",
+              "RelativeDocumentMoniker": "Views\\AddChangePartner.axaml",
+              "ToolTip": "C:\\Users\\Katya\\source\\repos\\MasterPolDesktop\\Views\\AddChangePartner.axaml",
+              "RelativeToolTip": "Views\\AddChangePartner.axaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-04T14:29:48.205Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "Styles.axaml",
               "DocumentMoniker": "C:\\Users\\Katya\\source\\repos\\MasterPolDesktop\\Assets\\Styles.axaml",
               "RelativeDocumentMoniker": "Assets\\Styles.axaml",
               "ToolTip": "C:\\Users\\Katya\\source\\repos\\MasterPolDesktop\\Assets\\Styles.axaml",
               "RelativeToolTip": "Assets\\Styles.axaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-03T19:10:38.752Z",
+              "WhenOpened": "2025-03-04T14:27:47.748Z",
               "EditorCaption": ""
             },
             {
@@ -90,45 +161,7 @@
               "ToolTip": "C:\\Users\\Katya\\source\\repos\\MasterPolDesktop\\Views\\PartnerList.axaml",
               "RelativeToolTip": "Views\\PartnerList.axaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-03T18:57:20.992Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AddChangePartner.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\Katya\\source\\repos\\MasterPolDesktop\\Views\\AddChangePartner.axaml.cs",
-              "RelativeDocumentMoniker": "Views\\AddChangePartner.axaml.cs",
-              "ToolTip": "C:\\Users\\Katya\\source\\repos\\MasterPolDesktop\\Views\\AddChangePartner.axaml.cs",
-              "RelativeToolTip": "Views\\AddChangePartner.axaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-03T18:09:36.353Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AddChangePartnerVM.cs",
-              "DocumentMoniker": "C:\\Users\\Katya\\source\\repos\\MasterPolDesktop\\ViewModels\\AddChangePartnerVM.cs",
-              "RelativeDocumentMoniker": "ViewModels\\AddChangePartnerVM.cs",
-              "ToolTip": "C:\\Users\\Katya\\source\\repos\\MasterPolDesktop\\ViewModels\\AddChangePartnerVM.cs",
-              "RelativeToolTip": "ViewModels\\AddChangePartnerVM.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAQwEQAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-03T17:40:50.254Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AddChangePartner.axaml",
-              "DocumentMoniker": "C:\\Users\\Katya\\source\\repos\\MasterPolDesktop\\Views\\AddChangePartner.axaml",
-              "RelativeDocumentMoniker": "Views\\AddChangePartner.axaml",
-              "ToolTip": "C:\\Users\\Katya\\source\\repos\\MasterPolDesktop\\Views\\AddChangePartner.axaml",
-              "RelativeToolTip": "Views\\AddChangePartner.axaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-03T17:40:44.846Z",
+              "WhenOpened": "2025-03-04T14:22:34.122Z",
               "EditorCaption": ""
             }
           ]

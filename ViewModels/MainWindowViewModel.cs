@@ -6,6 +6,7 @@ namespace MasterPolDesktop.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
+        
         UserControl _pageContent = new PartnerList();
         public UserControl PageContent { get => _pageContent; set => this.RaiseAndSetIfChanged(ref _pageContent, value); }
 

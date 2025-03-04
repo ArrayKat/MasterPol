@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MasterPolDesktop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6cddbefa67e1a521eecb848412af468c15dde146")]
 [assembly: System.Reflection.AssemblyProductAttribute("MasterPolDesktop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MasterPolDesktop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

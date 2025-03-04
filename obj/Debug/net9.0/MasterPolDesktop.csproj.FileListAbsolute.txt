@@ -169,3 +169,4 @@ C:\Users\Katya\source\repos\MasterPolDesktop\bin\Debug\net9.0\zh-Hans\Microsoft.
 C:\Users\Katya\source\repos\MasterPolDesktop\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\Katya\source\repos\MasterPolDesktop\bin\Debug\net9.0\DialogHost.Avalonia.dll
 C:\Users\Katya\source\repos\MasterPolDesktop\bin\Debug\net9.0\MsBox.Avalonia.dll
+C:\Users\Katya\source\repos\MasterPolDesktop\obj\Debug\net9.0\MasterPolDesktop.sourcelink.json

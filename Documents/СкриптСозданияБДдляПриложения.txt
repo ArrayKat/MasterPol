@@ -1,0 +1,215 @@
+-- public.material_types определение
+
+-- Drop table
+
+-- DROP TABLE public.material_types;
+
+CREATE TABLE public.material_types (
+	id_type serial4 NOT NULL,
+	percent_defect_materials numeric NULL,
+	name_type_material varchar NULL,
+	CONSTRAINT material_types_pk PRIMARY KEY (id_type)
+);
+
+
+-- public.partner_types определение
+
+-- Drop table
+
+-- DROP TABLE public.partner_types;
+
+CREATE TABLE public.partner_types (
+	id_type serial4 NOT NULL,
+	type_name varchar NULL,
+	CONSTRAINT partner_types_pk PRIMARY KEY (id_type)
+);
+
+
+-- public.product_types определение
+
+-- Drop table
+
+-- DROP TABLE public.product_types;
+
+CREATE TABLE public.product_types (
+	id_type serial4 NOT NULL,
+	type_name varchar NULL,
+	ratio numeric NULL,
+	CONSTRAINT product_types_pk PRIMARY KEY (id_type)
+);
+
+
+-- public.partners определение
+
+-- Drop table
+
+-- DROP TABLE public.partners;
+
+CREATE TABLE public.partners (
+	id_partner serial4 NOT NULL,
+	id_type_company int4 NULL,
+	name_company varchar NULL,
+	legal_address varchar NULL,
+	tax_identification_number varchar NULL,
+	director_full_name varchar NULL,
+	contact_phone varchar NULL,
+	contact_email varchar NULL,
+	rating int4 NULL,
+	CONSTRAINT partners_pk PRIMARY KEY (id_partner),
+	CONSTRAINT partners_partner_types_fk FOREIGN KEY (id_type_company) REFERENCES public.partner_types(id_type) ON DELETE RESTRICT ON UPDATE RESTRICT
+);
+
+
+-- public.products определение
+
+-- Drop table
+
+-- DROP TABLE public.products;
+
+CREATE TABLE public.products (
+	id_product serial4 NOT NULL,
+	id_product_type int4 NULL,
+	product_name varchar NULL,
+	article_number varchar NULL,
+	minimum_price numeric DEFAULT 0 NULL,
+	CONSTRAINT products_pk PRIMARY KEY (id_product),
+	CONSTRAINT products_product_types_fk FOREIGN KEY (id_product_type) REFERENCES public.product_types(id_type) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+-- public.partner_products определение
+
+-- Drop table
+
+-- DROP TABLE public.partner_products;
+
+CREATE TABLE public.partner_products (
+	id serial4 NOT NULL,
+	id_partner int4 NULL,
+	id_product int4 NULL,
+	count_product int4 NULL,
+	date_of_sale date NULL,
+	CONSTRAINT partner_products_pk PRIMARY KEY (id),
+	CONSTRAINT partner_products_partners_fk FOREIGN KEY (id_partner) REFERENCES public.partners(id_partner) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT partner_products_products_fk FOREIGN KEY (id_product) REFERENCES public.products(id_product) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+INSERT INTO public.material_types
+(id_type, percent_defect_materials, name_type_material)
+VALUES(1, 0.1, 'Тип материала 1');
+INSERT INTO public.material_types
+(id_type, percent_defect_materials, name_type_material)
+VALUES(2, 0.95, 'Тип материала 2');
+INSERT INTO public.material_types
+(id_type, percent_defect_materials, name_type_material)
+VALUES(3, 0.28, 'Тип материала 3');
+INSERT INTO public.material_types
+(id_type, percent_defect_materials, name_type_material)
+VALUES(4, 0.55, 'Тип материала 4');
+INSERT INTO public.material_types
+(id_type, percent_defect_materials, name_type_material)
+VALUES(5, 0.34, 'Тип материала 5');
+
+INSERT INTO public.partner_products
+(id, id_partner, id_product, count_product, date_of_sale)
+VALUES(1, 1, 1, 15500, '2023-03-23');
+INSERT INTO public.partner_products
+(id, id_partner, id_product, count_product, date_of_sale)
+VALUES(2, 1, 3, 12350, '2023-12-18');
+INSERT INTO public.partner_products
+(id, id_partner, id_product, count_product, date_of_sale)
+VALUES(3, 1, 4, 37400, '2024-06-07');
+INSERT INTO public.partner_products
+(id, id_partner, id_product, count_product, date_of_sale)
+VALUES(4, 2, 2, 35000, '2022-12-02');
+INSERT INTO public.partner_products
+(id, id_partner, id_product, count_product, date_of_sale)
+VALUES(5, 2, 5, 1250, '2023-05-17');
+INSERT INTO public.partner_products
+(id, id_partner, id_product, count_product, date_of_sale)
+VALUES(6, 2, 3, 1000, '2024-06-07');
+INSERT INTO public.partner_products
+(id, id_partner, id_product, count_product, date_of_sale)
+VALUES(7, 2, 1, 7550, '2024-07-01');
+INSERT INTO public.partner_products
+(id, id_partner, id_product, count_product, date_of_sale)
+VALUES(8, 3, 1, 7250, '2023-01-22');
+INSERT INTO public.partner_products
+(id, id_partner, id_product, count_product, date_of_sale)
+VALUES(9, 3, 2, 2500, '2024-07-05');
+INSERT INTO public.partner_products
+(id, id_partner, id_product, count_product, date_of_sale)
+VALUES(10, 4, 4, 59050, '2023-03-20');
+INSERT INTO public.partner_products
+(id, id_partner, id_product, count_product, date_of_sale)
+VALUES(11, 4, 3, 37200, '2024-03-12');
+INSERT INTO public.partner_products
+(id, id_partner, id_product, count_product, date_of_sale)
+VALUES(12, 4, 5, 4500, '2024-05-14');
+INSERT INTO public.partner_products
+(id, id_partner, id_product, count_product, date_of_sale)
+VALUES(13, 5, 3, 50000, '2023-09-19');
+INSERT INTO public.partner_products
+(id, id_partner, id_product, count_product, date_of_sale)
+VALUES(14, 5, 4, 670000, '2023-11-10');
+INSERT INTO public.partner_products
+(id, id_partner, id_product, count_product, date_of_sale)
+VALUES(15, 5, 1, 35000, '2024-04-15');
+INSERT INTO public.partner_products
+(id, id_partner, id_product, count_product, date_of_sale)
+VALUES(16, 5, 2, 25000, '2024-06-12');
+
+INSERT INTO public.partner_types
+(id_type, type_name)
+VALUES(1, 'ЗАО');
+INSERT INTO public.partner_types
+(id_type, type_name)
+VALUES(2, 'ООО');
+INSERT INTO public.partner_types
+(id_type, type_name)
+VALUES(3, 'ПАО');
+INSERT INTO public.partner_types
+(id_type, type_name)
+VALUES(4, 'ОАО');
+
+INSERT INTO public.partners
+(id_partner, id_type_company, name_company, legal_address, tax_identification_number, director_full_name, contact_phone, contact_email, rating)
+VALUES(4, 4, 'Ремонт и отделка', '143960, Московская область, город Реутов, ул. Свободы, 51', '1111520857', 'Воробьева Екатерина Валерьевна', '444 222 33 11', 'ekaterina.vorobeva@ml.ru', 5);
+INSERT INTO public.partners
+(id_partner, id_type_company, name_company, legal_address, tax_identification_number, director_full_name, contact_phone, contact_email, rating)
+VALUES(5, 1, 'МонтажПро', '309500, Белгородская область, город Старый Оскол, ул. Рабочая, 122', '5552431140', 'Степанов Степан Сергеевич', '912 888 33 33', 'stepanov@stepan.ru', 10);
+INSERT INTO public.partners
+(id_partner, id_type_company, name_company, legal_address, tax_identification_number, director_full_name, contact_phone, contact_email, rating)
+VALUES(1, 2, 'База Строитель!!!!', '652050, Кемеровская область, город Юрга, ул. Лесная, 15', '2222455179', 'Иванова Александра Ивановна', '000 000 00 00', 'aleksandraivanova@ml.ru', 7);
+INSERT INTO public.partners
+(id_partner, id_type_company, name_company, legal_address, tax_identification_number, director_full_name, contact_phone, contact_email, rating)
+VALUES(7, 3, 'вввв', 'ываыва', NULL, 'Иванов Иван Иванович', '999 999 99 99', 'test@mail.ru', 5);
+INSERT INTO public.partners
+(id_partner, id_type_company, name_company, legal_address, tax_identification_number, director_full_name, contact_phone, contact_email, rating)
+VALUES(6, 1, 'Тестовая организация', 'тЫКВА 2А', NULL, 'Иванов Иван Иванович', '777 777 77 77', 'test@example.com', 6);
+INSERT INTO public.partners
+(id_partner, id_type_company, name_company, legal_address, tax_identification_number, director_full_name, contact_phone, contact_email, rating)
+VALUES(2, 2, 'Паркет 29', '164500, Архангельская область, город Северодвинск, ул. Строителей, 18', '3333888520', 'Петров Василий Петрович', '987 123 56 78', 'vppetrov@vl.ru', 7);
+INSERT INTO public.partners
+(id_partner, id_type_company, name_company, legal_address, tax_identification_number, director_full_name, contact_phone, contact_email, rating)
+VALUES(8, 1, 'вываы', 'ываыав', NULL, 'Иванов Иван Ивановияч', '666 666 66 66', 'trt@dh.ff', 3);
+INSERT INTO public.partners
+(id_partner, id_type_company, name_company, legal_address, tax_identification_number, director_full_name, contact_phone, contact_email, rating)
+VALUES(3, 3, 'Стройсервис', '188910, Ленинградская область, город Приморск, ул. Парковая, 21', '4440391035', 'Соловьев Андрей Николаевич', '812 223 32 00', 'ansolovev@st.ru', 4);
+
+
+INSERT INTO public.products
+(id_product, id_product_type, product_name, article_number, minimum_price)
+VALUES(1, 3, 'Паркетная доска Ясень темный однополосная 14 мм', '8758385', 4456.90);
+INSERT INTO public.products
+(id_product, id_product_type, product_name, article_number, minimum_price)
+VALUES(2, 3, 'Инженерная доска Дуб Французская елка однополосная 12 мм', '8858958', 7330.99);
+INSERT INTO public.products
+(id_product, id_product_type, product_name, article_number, minimum_price)
+VALUES(3, 1, 'Ламинат Дуб дымчато-белый 33 класс 12 мм', '7750282', 1799.33);
+INSERT INTO public.products
+(id_product, id_product_type, product_name, article_number, minimum_price)
+VALUES(4, 1, 'Ламинат Дуб серый 32 класс 8 мм с фаской', '7028748', 3890.41);
+INSERT INTO public.products
+(id_product, id_product_type, product_name, article_number, minimum_price)
+VALUES(5, 4, 'Пробковое напольное клеевое покрытие 32 класс 4 мм', '5012543', 5450.59);

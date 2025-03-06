@@ -66,39 +66,44 @@ namespace MasterPolDesktop.ViewModels
                 if (SelectedType.IdType == 0) await MessageBoxManager.GetMessageBoxStandard("Ошибка", "Выберите корректный тип партнера", ButtonEnum.Ok).ShowAsync();
                 else
                 {
-                    bool isCorectedAddress = CurentPartner.LegalAddress != null && CurentPartner.LegalAddress != " ";
-                    if (!isCorectedAddress) await MessageBoxManager.GetMessageBoxStandard("Ошибка", "Адрес компании не заполнен", ButtonEnum.Ok).ShowAsync();
+                    if(CurentPartner.Rating==null || CurentPartner.Rating == 0) await MessageBoxManager.GetMessageBoxStandard("Ошибка", "Введите рейтинг, он не должен быть пустым", ButtonEnum.Ok).ShowAsync();
                     else
                     {
-                        string patternFIO = @"^[А-Я][а-я]+\s[А-Я][а-я]+\s[А-Я][а-я]+$";
-                        if (!Regex.IsMatch(CurentPartner.DirectorFullName, patternFIO)) await MessageBoxManager.GetMessageBoxStandard("Ошибка", "ФИО не правильно заполнено", ButtonEnum.Ok).ShowAsync();
+                        bool isCorectedAddress = CurentPartner.LegalAddress != null && CurentPartner.LegalAddress != " ";
+                        if (!isCorectedAddress) await MessageBoxManager.GetMessageBoxStandard("Ошибка", "Адрес компании не заполнен", ButtonEnum.Ok).ShowAsync();
                         else
                         {
-                            bool isCorectedPhone = (CurentPartner?.ContactPhone?.Any(c => c == '_') ?? false);
-                            if (isCorectedPhone) await MessageBoxManager.GetMessageBoxStandard("Ошибка", "Телефон не полностью заполнен", ButtonEnum.Ok).ShowAsync();
+                            string patternFIO = @"^[А-Я][а-я]+\s[А-Я][а-я]+\s[А-Я][а-я]+$";
+                            if (!Regex.IsMatch(CurentPartner.DirectorFullName, patternFIO)) await MessageBoxManager.GetMessageBoxStandard("Ошибка", "ФИО не правильно заполнено.\n Убедитесь, что оно пишется русскими буквами и имя, фамилия и отчество начинаются с заглавных букв.", ButtonEnum.Ok).ShowAsync();
                             else
                             {
-                                string patternEmail = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
-                                if (!Regex.IsMatch(CurentPartner.ContactEmail, patternEmail)) await MessageBoxManager.GetMessageBoxStandard("Ошибка", "Указан не верный email", ButtonEnum.Ok).ShowAsync();
-                                else {
-
-                                    if (CurentPartner.IdPartner == 0)
-                                    { //add
-                                        CurentPartner.IdTypeCompanyNavigation = SelectedType;
-                                        CurentPartner.IdTypeCompany = SelectedType.IdType;
-                                        MainWindowViewModel.myConnection.Partners.Add(CurentPartner);
-                                        MainWindowViewModel.myConnection.SaveChanges();
-                                        MainWindowViewModel.Instance.PageContent = new PartnerList();
-                                        await MessageBoxManager.GetMessageBoxStandard("Сообщение", "Партнер успешно добавлен!", ButtonEnum.Ok).ShowAsync();
-                                    }
+                                bool isCorectedPhone = (CurentPartner?.ContactPhone?.Any(c => c == '_') ?? false);
+                                if (isCorectedPhone) await MessageBoxManager.GetMessageBoxStandard("Ошибка", "Телефон не полностью заполнен", ButtonEnum.Ok).ShowAsync();
+                                else
+                                {
+                                    string patternEmail = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+                                    if (!Regex.IsMatch(CurentPartner.ContactEmail, patternEmail)) await MessageBoxManager.GetMessageBoxStandard("Ошибка", "Указан не верный email", ButtonEnum.Ok).ShowAsync();
                                     else
-                                    { //change
-                                        CurentPartner.IdTypeCompanyNavigation = SelectedType;
-                                        CurentPartner.IdTypeCompany = SelectedType.IdType;
-                                        MainWindowViewModel.myConnection.Update(CurentPartner);
-                                        MainWindowViewModel.myConnection.SaveChanges();
-                                        MainWindowViewModel.Instance.PageContent = new PartnerList();
-                                        await MessageBoxManager.GetMessageBoxStandard("Сообщение", "Партнер успешно обновлен!", ButtonEnum.Ok).ShowAsync();
+                                    {
+
+                                        if (CurentPartner.IdPartner == 0)
+                                        { //add
+                                            CurentPartner.IdTypeCompanyNavigation = SelectedType;
+                                            CurentPartner.IdTypeCompany = SelectedType.IdType;
+                                            MainWindowViewModel.myConnection.Partners.Add(CurentPartner);
+                                            MainWindowViewModel.myConnection.SaveChanges();
+                                            MainWindowViewModel.Instance.PageContent = new PartnerList();
+                                            await MessageBoxManager.GetMessageBoxStandard("Сообщение", "Партнер успешно добавлен!", ButtonEnum.Ok).ShowAsync();
+                                        }
+                                        else
+                                        { //change
+                                            CurentPartner.IdTypeCompanyNavigation = SelectedType;
+                                            CurentPartner.IdTypeCompany = SelectedType.IdType;
+                                            MainWindowViewModel.myConnection.Update(CurentPartner);
+                                            MainWindowViewModel.myConnection.SaveChanges();
+                                            MainWindowViewModel.Instance.PageContent = new PartnerList();
+                                            await MessageBoxManager.GetMessageBoxStandard("Сообщение", "Партнер успешно обновлен!", ButtonEnum.Ok).ShowAsync();
+                                        }
                                     }
                                 }
                             }

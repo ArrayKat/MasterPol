@@ -1,0 +1,308 @@
+-- public.employee определение
+
+-- Drop table
+
+-- DROP TABLE public.employee;
+
+CREATE TABLE public.employee (
+	id serial4 NOT NULL,
+	last_name varchar NULL,
+	first_name varchar NULL,
+	patronymic varchar NULL,
+	date_of_birth date NULL,
+	number_passport int4 NULL,
+	address_rigistration_passport varchar NULL,
+	date_registration_passport date NULL,
+	address_residential varchar NULL,
+	current_account_number_bank int4 NULL,
+	correspondent_account_number_bank int4 NULL,
+	bank_identification_code int4 NULL,
+	full_name_bank varchar NULL,
+	presence_of_family bool NULL,
+	health text NULL,
+	CONSTRAINT employee_pk PRIMARY KEY (id)
+);
+
+
+-- public.equipment определение
+
+-- Drop table
+
+-- DROP TABLE public.equipment;
+
+CREATE TABLE public.equipment (
+	id serial4 NOT NULL,
+	name_equipment varchar NULL,
+	count_equipment int4 NULL,
+	cost_equipment int4 NULL,
+	CONSTRAINT equipment_pk PRIMARY KEY (id)
+);
+
+
+-- public.products определение
+
+-- Drop table
+
+-- DROP TABLE public.products;
+
+CREATE TABLE public.products (
+	id int4 NOT NULL,
+	article varchar NOT NULL,
+	name_product varchar NULL,
+	description text NULL,
+	image varchar NULL,
+	min_cost_partner numeric NULL,
+	lenth_package numeric NULL,
+	width_package numeric NULL,
+	height_package numeric NULL,
+	weight_without_packaging numeric NULL,
+	weight_with_packaging numeric NULL,
+	quality_certificate varchar NULL,
+	standart_number varchar NULL,
+	production_time time NULL,
+	cost_price numeric NULL,
+	workshop_number int4 NULL,
+	number_people_in_production int4 NULL,
+	CONSTRAINT products_pk PRIMARY KEY (id)
+);
+
+
+-- public.type_material определение
+
+-- Drop table
+
+-- DROP TABLE public.type_material;
+
+CREATE TABLE public.type_material (
+	id serial4 NOT NULL,
+	name_type_material varchar NULL,
+	percent_defect_materials numeric NULL,
+	CONSTRAINT material_history_pk PRIMARY KEY (id)
+);
+
+
+-- public.type_operation определение
+
+-- Drop table
+
+-- DROP TABLE public.type_operation;
+
+CREATE TABLE public.type_operation (
+	id serial4 NOT NULL,
+	name_type_operation_warehouse varchar NULL,
+	CONSTRAINT type_operation_pk PRIMARY KEY (id)
+);
+
+
+-- public.type_partner определение
+
+-- Drop table
+
+-- DROP TABLE public.type_partner;
+
+CREATE TABLE public.type_partner (
+	id serial4 NOT NULL,
+	name_type varchar NULL,
+	CONSTRAINT type_partner_pk PRIMARY KEY (id)
+);
+
+
+-- public.type_suppliers определение
+
+-- Drop table
+
+-- DROP TABLE public.type_suppliers;
+
+CREATE TABLE public.type_suppliers (
+	id serial4 NOT NULL,
+	name_type_suppliers varchar NULL,
+	CONSTRAINT type_suppliers_pk PRIMARY KEY (id)
+);
+
+
+-- public.managers определение
+
+-- Drop table
+
+-- DROP TABLE public.managers;
+
+CREATE TABLE public.managers (
+	id serial4 NOT NULL,
+	id_employee int4 NOT NULL,
+	name_role varchar NULL,
+	id_partners int4 NOT NULL,
+	CONSTRAINT managers_pk PRIMARY KEY (id),
+	CONSTRAINT managers_employee_fk FOREIGN KEY (id_employee) REFERENCES public.employee(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+-- public.partners определение
+
+-- Drop table
+
+-- DROP TABLE public.partners;
+
+CREATE TABLE public.partners (
+	id serial4 NOT NULL,
+	name_company varchar NULL,
+	legal_address varchar NULL,
+	tax_identification_number int4 NULL,
+	directors_full_name varchar NULL,
+	phone varchar NULL,
+	email varchar NULL,
+	logo varchar NULL,
+	rating int4 NULL,
+	places_of_sale varchar NULL,
+	id_type_partners int4 NULL,
+	id_manager int4 NOT NULL,
+	CONSTRAINT partners_pk PRIMARY KEY (id),
+	CONSTRAINT partners_managers_fk FOREIGN KEY (id_manager) REFERENCES public.managers(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT partners_type_partner_fk FOREIGN KEY (id_type_partners) REFERENCES public.type_partner(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+-- public.suppliers определение
+
+-- Drop table
+
+-- DROP TABLE public.suppliers;
+
+CREATE TABLE public.suppliers (
+	id serial4 NOT NULL,
+	id_supplier_type int4 NOT NULL,
+	company_name varchar NULL,
+	inn int4 NULL,
+	CONSTRAINT suppliers_pk PRIMARY KEY (id),
+	CONSTRAINT suppliers_type_suppliers_fk FOREIGN KEY (id_supplier_type) REFERENCES public.type_suppliers(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+-- public.workers определение
+
+-- Drop table
+
+-- DROP TABLE public.workers;
+
+CREATE TABLE public.workers (
+	id int4 DEFAULT nextval('newtable_1_id_seq'::regclass) NOT NULL,
+	id_equipment int4 NOT NULL,
+	id_employee int4 NOT NULL,
+	name_role varchar NOT NULL,
+	CONSTRAINT newtable_1_pk PRIMARY KEY (id),
+	CONSTRAINT newtable_1_employee_fk FOREIGN KEY (id_employee) REFERENCES public.employee(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT newtable_1_equipment_fk FOREIGN KEY (id_equipment) REFERENCES public.equipment(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+-- public.access_logs определение
+
+-- Drop table
+
+-- DROP TABLE public.access_logs;
+
+CREATE TABLE public.access_logs (
+	id serial4 NOT NULL,
+	id_worker int4 NOT NULL,
+	time_access date NOT NULL,
+	type_access_is_input bool NOT NULL,
+	CONSTRAINT access_logs_pk PRIMARY KEY (id),
+	CONSTRAINT access_logs_workers_fk FOREIGN KEY (id_worker) REFERENCES public.workers(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+-- public.materials определение
+
+-- Drop table
+
+-- DROP TABLE public.materials;
+
+CREATE TABLE public.materials (
+	id serial4 NOT NULL,
+	id_type_material int4 NOT NULL,
+	name_material varchar NULL,
+	id_supplier int4 NOT NULL,
+	quantity_package varchar NULL,
+	unit_of_measurement varchar NULL,
+	description text NULL,
+	image varchar NULL,
+	"cost" int4 NULL,
+	current_quantity int4 NULL,
+	min_quantity int4 NULL,
+	CONSTRAINT materials_pk PRIMARY KEY (id),
+	CONSTRAINT materials_suppliers_fk FOREIGN KEY (id_supplier) REFERENCES public.suppliers(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT materials_type_material_fk FOREIGN KEY (id_type_material) REFERENCES public.type_material(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+-- public.orders определение
+
+-- Drop table
+
+-- DROP TABLE public.orders;
+
+CREATE TABLE public.orders (
+	id serial4 NOT NULL,
+	id_partner int4 NOT NULL,
+	id_manager int4 NOT NULL,
+	order_date date NULL,
+	total_cost int4 NULL,
+	status_is_pay bool NULL,
+	delivery_date date NULL,
+	order_status bool NULL,
+	CONSTRAINT manager_partners_pk PRIMARY KEY (id),
+	CONSTRAINT orders_managers_fk FOREIGN KEY (id_manager) REFERENCES public.managers(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT orders_partners_fk FOREIGN KEY (id_partner) REFERENCES public.partners(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+-- public.warehouse определение
+
+-- Drop table
+
+-- DROP TABLE public.warehouse;
+
+CREATE TABLE public.warehouse (
+	id int4 NOT NULL,
+	id_material int4 NOT NULL,
+	id_product int4 NOT NULL,
+	id_type_orepation int4 NOT NULL,
+	quantity int4 NULL,
+	date_operation date NULL,
+	CONSTRAINT warehouse_pk PRIMARY KEY (id),
+	CONSTRAINT warehouse_materials_fk FOREIGN KEY (id_material) REFERENCES public.materials(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT warehouse_products_fk FOREIGN KEY (id_product) REFERENCES public.products(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT warehouse_type_operation_fk FOREIGN KEY (id_type_orepation) REFERENCES public.type_operation(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+-- public.order_products определение
+
+-- Drop table
+
+-- DROP TABLE public.order_products;
+
+CREATE TABLE public.order_products (
+	id serial4 NOT NULL,
+	id_order int4 NOT NULL,
+	id_product int4 NOT NULL,
+	CONSTRAINT order_products_pk PRIMARY KEY (id),
+	CONSTRAINT order_products_orders_fk FOREIGN KEY (id_order) REFERENCES public.orders(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT order_products_products_fk FOREIGN KEY (id_product) REFERENCES public.products(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+-- public.production определение
+
+-- Drop table
+
+-- DROP TABLE public.production;
+
+CREATE TABLE public.production (
+	id serial4 NOT NULL,
+	id_orders int4 NOT NULL,
+	id_warehouse int4 NULL,
+	closing_date date NULL,
+	CONSTRAINT production_pk PRIMARY KEY (id),
+	CONSTRAINT production_orders_fk FOREIGN KEY (id_orders) REFERENCES public.orders(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT production_warehouse_fk FOREIGN KEY (id_warehouse) REFERENCES public.warehouse(id) ON DELETE CASCADE ON UPDATE CASCADE
+);

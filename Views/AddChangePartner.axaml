@@ -11,6 +11,7 @@
 		<Button Command="{Binding GoBack}" Content="Назад" Margin="5"/>
 		<TextBlock Text="{Binding NamePage}" FontWeight="Bold" FontSize="24" Foreground="#67BA80" HorizontalAlignment="Center"/>
 		<StackPanel Margin="100 0">
+			<TextBlock Text="Наименование организации:"/>
 			<TextBox Watermark="Наименование организации" Text="{Binding CurentPartner.NameCompany}"/>
 			<TextBlock Text="Тип организации:"/>
 			<ComboBox ItemsSource="{Binding Types}" SelectedItem="{Binding SelectedType}">
@@ -22,12 +23,15 @@
 			</ComboBox>
 			<TextBlock Text="Рейтинг:"/>
 			<NumericUpDown Minimum="0" Maximum="10" Value="{Binding CurentPartner.Rating}" FormatString="0"/>
+			<TextBlock Text="Адрес организации:"/>
 			<TextBox Watermark="Адрес организации" Text="{Binding CurentPartner.LegalAddress}"/>
-			<TextBox Watermark="ФИО директора" Text="{Binding CurentPartner.DirectorFullName}"/>
+			<TextBlock Text="ФИО директора:"/>
+			<TextBox Watermark="Иванов Иван Иванович" Text="{Binding CurentPartner.DirectorFullName}"/>
 			<TextBlock Text="Телефон:"/>
 			<MaskedTextBox Text="{Binding CurentPartner.ContactPhone}" Mask="000 000 00 00"/>
-			<TextBox Watermark="Почта" Text="{Binding CurentPartner.ContactEmail}"/>
-			<Button Command="{Binding SaveChange}" Content="Сохранить"/>
+			<TextBlock Text="Почта:"/>
+			<TextBox Watermark="test@example.ru" Text="{Binding CurentPartner.ContactEmail}"/>
+			<Button Command="{Binding SaveChange}" Content="Сохранить" Margin="0 10"/>
 		</StackPanel>
 
 	</StackPanel>

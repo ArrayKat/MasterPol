@@ -5,6 +5,10 @@ VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterPolDesktop", "MasterPolDesktop.csproj", "{DBC3DD84-5386-43BC-BA01-683570830F3D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterPolLibrary", "..\MasterPolLibrary\MasterPolLibrary.csproj", "{F41F5CA4-89B9-4D1D-86AB-C3E56F78669F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterPolUnitTests", "..\MasterPolUnitTests\MasterPolUnitTests.csproj", "{6DF55F40-A55A-4B56-A562-503372A7BC8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{DBC3DD84-5386-43BC-BA01-683570830F3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBC3DD84-5386-43BC-BA01-683570830F3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBC3DD84-5386-43BC-BA01-683570830F3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F41F5CA4-89B9-4D1D-86AB-C3E56F78669F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F41F5CA4-89B9-4D1D-86AB-C3E56F78669F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F41F5CA4-89B9-4D1D-86AB-C3E56F78669F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F41F5CA4-89B9-4D1D-86AB-C3E56F78669F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DF55F40-A55A-4B56-A562-503372A7BC8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DF55F40-A55A-4B56-A562-503372A7BC8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DF55F40-A55A-4B56-A562-503372A7BC8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DF55F40-A55A-4B56-A562-503372A7BC8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
